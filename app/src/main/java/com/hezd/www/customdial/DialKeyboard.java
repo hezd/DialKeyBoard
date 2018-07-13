@@ -107,6 +107,7 @@ public class DialKeyboard extends LinearLayout implements View.OnClickListener {
         mZeroBtn = keyboardView.findViewById(R.id.btn_zero);
         mStarBtn = keyboardView.findViewById(R.id.btn_star);
         mHashSignBtn = keyboardView.findViewById(R.id.btn_has_sign);
+        mInputContentTv.setTextSize(15);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -138,7 +139,11 @@ public class DialKeyboard extends LinearLayout implements View.OnClickListener {
             @Override
             public void afterTextChanged(Editable editable) {
                 String content = mInputContentTv.getText().toString();
-                mClearIv.setVisibility(TextUtils.isEmpty(content)?INVISIBLE:VISIBLE);
+                if(TextUtils.isEmpty(content)) {
+                    mInputContentTv.setTextSize(15);
+                }else {
+                    mInputContentTv.setTextSize(20);
+                }
 
             }
         });
@@ -261,6 +266,9 @@ public class DialKeyboard extends LinearLayout implements View.OnClickListener {
         if(!TextUtils.isEmpty(realContent)) {
             realContent = new StringBuilder(realContent).substring(0,realContent.length()-1);
            formatContent();
+        }else {
+            showContent = "";
+            mInputContentTv.setText(showContent);
         }
     }
 }
