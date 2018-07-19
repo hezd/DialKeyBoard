@@ -25,7 +25,7 @@ import android.widget.TextView;
  * @auther hezd
  * created on 2018/7/11 15:18
  */
-public class DialKeyboard extends LinearLayout implements View.OnClickListener {
+public class DialKeyboardView extends LinearLayout implements View.OnClickListener {
     private static final String TAG = "hezd---";
     public static final int TYPE_REMOVE_LOOP = 0x1;
     public static final int TYPE_REMOVE = 0x2;
@@ -71,12 +71,12 @@ public class DialKeyboard extends LinearLayout implements View.OnClickListener {
     private String realContent;
     private String showContent;
 
-    public DialKeyboard(Context context) {
+    public DialKeyboardView(Context context) {
         super(context);
         init(context);
     }
 
-    public DialKeyboard(Context context, @Nullable AttributeSet attrs) {
+    public DialKeyboardView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }

@@ -12,8 +12,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DialKeyboard dialKeyboard = findViewById(R.id.keyboard);
-        dialKeyboard.setOnCallBtnCLickListener(new DialKeyboard.OnCallBtnClickListener() {
+        DialKeyboardView dialKeyboard = findViewById(R.id.keyboard);
+        dialKeyboard.setOnCallBtnCLickListener(new DialKeyboardView.OnCallBtnClickListener() {
             @Override
             public void onCallBtnClick(String phoneNum) {
                 if(!TextUtils.isEmpty(phoneNum))
